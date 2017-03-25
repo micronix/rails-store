@@ -1,0 +1,17 @@
+<h1>Products</h1>
+<%= link_to 'New', '/products/new', class: 'btn btn-primary' %>
+
+<% @products.each do |product| %>
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object product-thumb" src="<%= product.picture_url %>" alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= link_to product.name, "/products/#{product.id}" %></h4>
+    <%= product.description %>
+    <%= link_to 'Edit', "/products/#{product.id}/edit", class: 'btn btn-default' %>
+  </div>
+</div>
+<% end %>

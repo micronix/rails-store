@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+.product-thumb {
+    height: 64px;
+    max-width: 64px;
+}
+
+.product-main {
+    height: 180px;
+}
