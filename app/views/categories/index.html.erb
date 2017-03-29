@@ -1,0 +1,11 @@
+<h1>Categories</h1>
+<%= link_to 'New', '/categories/new', class: 'btn btn-primary' %>
+
+<ul class="list-group">
+<% @categories.each do |category| %>
+  <li class="list-group-item">
+      <%= category.name %>
+      <%= link_to 'Edit', "/categories/#{category.id}/edit", class: 'btn btn-default' %>
+  </li>
+<% end %>
+</ul>

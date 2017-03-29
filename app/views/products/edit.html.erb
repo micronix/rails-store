@@ -1,17 +1,9 @@
 <h1>Edit Product</h1>
 
+<% @product.errors.messages.each do |name, message| %>
+    <p class="bg-danger"><%= name %> <%= message.first %></p>
+<% end %>
+
 <%= form_tag "/products/#{@product.id}", method: :put do %>
-    <div class="form-group">
-        <%= text_field_tag :name, @product.name, placeholder: 'Name', class: 'form-control' %>
-    </div>
-    <div class="form-group">
-        <%= text_field_tag :description, @product.description, placeholder: 'Description', class: 'form-control' %>
-    </div>
-    <div class="form-group">
-        <%= text_field_tag :picture_url, @product.picture_url, placeholder: 'Pricture URL', class: 'form-control' %>
-    </div>
-    <div class="form-group">
-        <%= text_field_tag :price, @product.price, placeholder: 'Price', class: 'form-control' %>
-    </div>
-    <%= submit_tag 'Save', class: 'btn btn-default' %>
+    <%= render 'form' %>
 <% end %>

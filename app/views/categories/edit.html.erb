@@ -1,0 +1,9 @@
+<h1>Edit Category</h1>
+
+<% @category.errors.messages.each do |name, message| %>
+    <p class="bg-danger"><%= name %> <%= message.first %></p>
+<% end %>
+
+<%= form_tag "/categories/#{@category.id}", method: :put do %>
+    <%= render 'form' %>
+<% end %>
