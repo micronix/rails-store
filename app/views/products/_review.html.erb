@@ -1,0 +1,23 @@
+<%= form_tag "/products/#{@product.id}/review" do %>
+<h4>Add Review</h4>
+
+<div class="form-group">
+<select name="rating" class="form-control">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+</select>
+</div>
+
+<div class="form-group">
+    <input class="form-control" name="username" placeholder="Username">
+</div>
+
+<div class="form-group">
+    <textarea name="text" class="form-control" placeholder="Comments..."></textarea>
+</div>
+
+<%= submit_tag 'Submit' %>
+<% end %>
